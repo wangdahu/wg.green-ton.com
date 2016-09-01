@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+use Socialite;
+
 class AuthController extends Controller
 {
     //protected $redirectPath = '/articles';
@@ -71,5 +73,40 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+     /**
+     * 将用户重定向到GitHub认证页面.
+     *
+     * @return Response
+     */
+    public function redirectToProvider()
+    {
+        return Socialite::driver('github')->redirect();
+    }
+
+    /**
+     * 从GitHub获取用户信息.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback()
+    {
+        $user = Socialite::driver('github')->user();
+        if(!User::where('github_id',$user->id)->first()){
+            $userModel = new User;
+            $userModel->github_id = $user->id;
+            $userModel->email = $user->email;
+            $userModel->name = $user->name ? $user->name : $user->nickname;
+            $userModel->avatar = $user->avatar;
+            $userModel->save();
+        }
+        $userInstance = User::where('github_id',$user->id)->firstOrFail();
+        return redirect('/articles');
+        self::login($userInstance);
+        echo $user->name.'登录成功!';
+
+
+        // $user->token;
     }
 }

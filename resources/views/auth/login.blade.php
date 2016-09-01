@@ -59,6 +59,7 @@
                         </div>
                     </form>
                 </div>
+                <div class="panel-body"><a href="{{ url('/auth/github') }}">使用github账号登录</a></div>
             </div>
         </div>
     </div>

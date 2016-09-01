@@ -11,7 +11,10 @@
         "laravelcollective/html": "^5.2",
         "socialiteproviders/qq": "^2.0",
         "socialiteproviders/weibo": "^2.0",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^6.2",
+        "overtrue/wechat": "~3.0",
+        "overtrue/laravel-wechat": "~3.0",
+        "laravel/socialite": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

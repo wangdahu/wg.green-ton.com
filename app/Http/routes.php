@@ -35,7 +35,18 @@ Route::group(['middleware' => ['web']], function () {
     Route::resource('articles', 'ArticlesController');
     Route::auth();
 
+    Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
+    Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
+
     Route::get('/home', 'HomeController@index');
+
+    Route::get('/wechat/menu', 'Admin\MenuController@menu');
+    Route::get('/wechat/menu/all', 'Admin\MenuController@all');
+    Route::get('/wechat/menu/edit', 'Admin\MenuController@all');
+    Route::get('/wechat/news', 'Admin\MaterialController@news');
+    Route::get('/wechat/images', 'Admin\MaterialController@images');
+    Route::post('/wechat/images/save', 'Admin\MaterialController@saveImages');
 
 
 });
+Route::any('/wechat', 'Admin\WechatController@serve');

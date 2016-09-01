@@ -1,0 +1,278 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"html",
+				"htmlspecialchars"
+			],
+			[
+				"tr",
+				"trigger	.trigger()"
+			],
+			[
+				"text",
+				"text-align"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 213.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"vew",
+				"View: Toggle Menu"
+			]
+		],
+		"width": 571.0
+	},
+	"console":
+	{
+		"height": 162.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/xampp/htdocs/laravel/public/index.php",
+		"/D/xampp/htdocs/laravel/package.json",
+		"/D/xampp/htdocs/laravel/tests/ExampleTest.php",
+		"/D/xampp/htdocs/laravel/tests/TestCase.php",
+		"/D/xampp/htdocs/laravel/config/app.php",
+		"/D/xampp/htdocs/laravel/bootstrap/autoload.php",
+		"/D/xampp/htdocs/laravel/bootstrap/cache/services.php",
+		"/D/xampp/htdocs/wg/index.php",
+		"/D/xampp/htdocs/wg/App/Home/Controller/IndexController.class.php",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/D/xampp/apache/conf/extra/httpd-vhosts.conf",
+		"/D/xampp/htdocs/wg/Core_3_2_3/ThinkPHP.php",
+		"/C/Users/qwe/AppData/Local/Temp/HZ$D.939.2956/HZ$D.939.2958/Monokai.tmTheme",
+		"/C/Users/qwe/AppData/Local/Temp/HZ$D.939.2960/HZ$D.939.2962/LAZY.tmTheme",
+		"/C/Users/qwe/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/qwe/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/qwe/AppData/Local/Temp/HZ$D.939.2960/HZ$D.939.2961/Monokai.tmTheme",
+		"/C/Users/qwe/AppData/Local/Temp/HZ$D.939.2956/HZ$D.939.2957/All Hallow's Eve.tmTheme",
+		"/C/Users/qwe/AppData/Local/Temp/HZ$D.367.2529/HZ$D.367.2530/All Hallow's Eve.tmTheme",
+		"/C/Users/qwe/AppData/Local/Temp/HZ$D.367.2529/HZ$D.367.2531/Monokai.tmTheme",
+		"/C/Users/qwe/AppData/Local/Temp/HZ$D.587.4568/HZ$D.587.4569/Monokai.tmTheme",
+		"/C/Users/qwe/AppData/Local/Temp/HZ$D.587.4564/HZ$D.587.4566/Monokai.tmTheme",
+		"/C/Users/qwe/AppData/Local/Temp/HZ$D.587.4564/HZ$D.587.4565/All Hallow's Eve.tmTheme",
+		"/C/Users/qwe/AppData/Local/Temp/HZ$D.950.776/HZ$D.950.777/Monokai.tmTheme",
+		"/D/Program Files/Sublime Text 3/Packages/PHP.sublime-package",
+		"/D/Program Files/Sublime Text 3/Packages/Color Scheme - Default.sublime-package",
+		"/D/xampp/htdocs/wg/App/Runtime/index.html",
+		"/D/xampp/htdocs/wg/App/Common/index.html",
+		"/D/xampp/apache/conf/httpd.conf",
+		"/D/xampp/htdocs/motor/index.php",
+		"/D/xampp/htdocs/wg/App/Common/Common/index.html",
+		"/C/Users/qwe/Downloads/jquery-3d-menu-with-search/js/jquery-accordion-menu.js",
+		"/C/Users/qwe/Downloads/jquery-3d-menu-with-search/css/jquery-accordion-menu.css",
+		"/C/Users/qwe/Downloads/jquery-3d-menu-with-search/index.html",
+		"/C/Users/qwe/Downloads/jquery-side-icon-dropdown-menu/index.html",
+		"/C/Users/qwe/Downloads/jquery-side-icon-dropdown-menu/css/font-awesome.css",
+		"/C/Users/qwe/Downloads/jquery-side-icon-dropdown-menu/js/google-maps.js",
+		"/F/sftp/layer-v2.4/demo.html",
+		"/F/sftp/layer-v2.4/layer/layer.js",
+		"/D/xampp/htdocs/motor/App/Admin/Controller/WebsiteController.class.php",
+		"/D/xampp/htdocs/motor/Public/Admin/js/login.js",
+		"/D/xampp/htdocs/ThinkPHP/ThinkPHP/Tpl/default_index.tpl",
+		"/D/xampp/htdocs/ThinkPHP/index.php",
+		"/D/xampp/htdocs/ThinkPHP/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php",
+		"/D/xampp/htdocs/ThinkPHP/ThinkPHP/Mode/Sae/convention.php",
+		"/D/xampp/htdocs/ThinkPHP/ThinkPHP/Common/functions.php",
+		"/D/xampp/htdocs/ThinkPHP/ThinkPHP/ThinkPHP.php"
+	],
+	"find":
+	{
+		"height": 43.0
+	},
+	"find_in_files":
+	{
+		"height": 117.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"line",
+			"true",
+			"()",
+			"script",
+			"\n",
+			"/>\";\n",
+			").\"<",
+			">",
+			";",
+			"var_dump",
+			");\n",
+			"translate_tabs_to_spaces",
+			"	\"",
+			"client",
+			"namespace",
+			"<?",
+			"vhost"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 43.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 82.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"indexcon",
+				"App\\Home\\Controller\\IndexController.class.php"
+			],
+			[
+				"index",
+				"index.php"
+			],
+			[
+				"think",
+				"Core_3_2_3\\ThinkPHP.php"
+			],
+			[
+				"inde",
+				"App\\Runtime\\index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": false,
+	"side_bar_visible": true,
+	"side_bar_width": 293.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
