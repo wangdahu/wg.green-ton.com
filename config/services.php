@@ -35,9 +35,9 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
     'github' => [
-        'client_id' => 'ad7b3f217a43f83d00f0',
-        'client_secret' => '95102ece46e3184474ed645d38378227c4bb02d8',
-        'redirect' => 'http://1f6fa2b.ngrok.natapp.cn/auth/github/callback',
+        'client_id' => env('GITHUB_CLIENTID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => env('GITHUB_REDIRECT'),
     ],
 
 ];
