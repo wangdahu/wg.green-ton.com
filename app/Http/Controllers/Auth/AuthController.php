@@ -102,9 +102,9 @@ class AuthController extends Controller
             $userModel->save();
         }
         $userInstance = User::where('github_id',$user->id)->firstOrFail();
-        return redirect('/articles');
         self::login($userInstance);
         echo $user->name.'登录成功!';
+        return redirect('/articles');
 
 
         // $user->token;

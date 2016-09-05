@@ -150,6 +150,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,//登录第三方
         Overtrue\LaravelWechat\ServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -208,6 +209,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Wechat' => Overtrue\LaravelWechat\Facade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/home');
 });
 
 /*Route::controllers([
@@ -33,6 +33,11 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web']], function () {
     Route::resource('articles', 'ArticlesController');
+    Route::resource('news', 'NewsController');
+
+    Route::resource('user', 'UserController');
+    Route::post('user/avatar', 'UserController@avatar');
+
     Route::auth();
 
     Route::get('auth/github', 'Auth\AuthController@redirectToProvider');

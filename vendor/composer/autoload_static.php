@@ -10,8 +10,8 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
         '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
@@ -84,6 +84,7 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
         ),
         'I' => 
         array (
+            'Intervention\\Image\\' => 19,
             'Illuminate\\' => 11,
         ),
         'G' => 
@@ -258,6 +259,10 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
         array (
             0 => __DIR__ . '/..' . '/laravel/socialite/src',
         ),
+        'Intervention\\Image\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -396,7 +401,14 @@ class ComposerStaticInitf0edef8d82d469d4cfba4316d7feb75f
     public static $classMap = array (
         'AddGithubInfoColumnToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_21_031216_add_github_info_column_to_users_table.php',
         'AddIntroColumnToArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_12_002336_add_intro_column_to_articles_table.php',
+        'AddIntroColumnToUser' => __DIR__ . '/../..' . '/database/migrations/2016_09_02_221318_add_intro_column_to_user.php',
         'AddUserIdColumnToArticles' => __DIR__ . '/../..' . '/database/migrations/2016_08_12_073907_add_user_id_column_to_articles.php',
+        'CerateCommentsTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_03_232551_cerate_comments_table.php',
+        'CerateFriendsTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_03_233326_cerate_friends_table.php',
+        'CerateMessagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_03_233949_cerate_messages_table.php',
+        'CerateNewsTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_03_231303_cerate_news_table.php',
+        'CeratePraisesTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_03_233121_cerate_praises_table.php',
+        'CerateWordsTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_03_234308_cerate_words_table.php',
         'CreateArticleTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_12_001210_create_article_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
