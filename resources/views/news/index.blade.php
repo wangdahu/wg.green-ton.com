@@ -8,7 +8,7 @@
                 @include('user.avatar')
                 <div class="panel-body text-left ">
                     @include('user.title')
-                    {!! Form::open(['method' => 'PATCH', 'url' => '/news/create']) !!}
+                    {!! Form::open(['url' => '/news']) !!}
                         @include('news.form')
                     {!! Form::close() !!}
                         @include('errors.list')

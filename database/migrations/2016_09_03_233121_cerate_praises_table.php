@@ -14,7 +14,7 @@ class CeratePraisesTable extends Migration
     {
         Schema::create('praises', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('new_id');
+            $table->integer('news_id');
             $table->integer('user_id');
             $table->timestamp('published_at');
             $table->timestamps();

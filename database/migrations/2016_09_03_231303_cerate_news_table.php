@@ -18,6 +18,7 @@ class CerateNewsTable extends Migration
             $table->string('content');
             $table->integer('comment_count');
             $table->integer('praise_count');
+            $table->tinyInteger('deleted');
             $table->timestamp('published_at');
             $table->timestamps();
         });
