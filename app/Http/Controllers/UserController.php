@@ -35,7 +35,7 @@ class UserController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'email' => 'required|email|max:255|unique:users,email,'.$this->id,
         ]);
     }
 
@@ -46,7 +46,7 @@ class UserController extends Controller
     }
 
     public function show($id) {
-        if($id == Auth::user()->id) {
+        if($id == $this->id) {
             return redirect('user');
         }
         $user = User::findOrFail($id);
@@ -78,9 +78,13 @@ class UserController extends Controller
         $avatar->move($fileDir,$fileName);
         rename($fileDir.$fileName, $fileDir.$newFileName);
         @unlink($fileDir.$fileName);
-        // $img = Image::make($fileDir.$newFileName)->resize(90, 90);
-        // dd($img->response('jpg'));
         $user = User::findOrFail($this->id);
+        if($user->avatar) {
+            $oldAvatar = public_path().$user->avatar;
+            if(file_exists($oldAvatar)) {
+                @unlink($oldAvatar);
+            }
+        }
         $user->avatar = '/images/avatar/'.$newFileName;
         if($user->save()) {
             return redirect('user/'.$this->id.'/edit');
