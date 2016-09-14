@@ -81,9 +81,7 @@ class UserController extends Controller
         $user = User::findOrFail($this->id);
         if($user->avatar) {
             $oldAvatar = public_path().$user->avatar;
-            if(file_exists($oldAvatar)) {
-                @unlink($oldAvatar);
-            }
+            file_exists($oldAvatar) ? @unlink($oldAvatar) : '';
         }
         $user->avatar = '/images/avatar/'.$newFileName;
         if($user->save()) {
