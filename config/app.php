@@ -151,6 +151,7 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,//登录第三方
         Overtrue\LaravelWechat\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        // sngrl\SphinxSearch\SphinxSearchServiceProvider,
 
         /*
          * Application Service Providers...
@@ -210,6 +211,7 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Wechat' => Overtrue\LaravelWechat\Facade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        //'SphinxSearch' => sngrl\SphinxSearch\SphinxSearch,
 
     ],
 

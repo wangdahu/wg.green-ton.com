@@ -39,7 +39,6 @@ class UserController extends Controller
         ]);
     }
 
-    //
     public function index() {
         $user = User::findOrFail($this->id);
         return view('user.index', compact('user'));

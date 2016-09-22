@@ -9,6 +9,7 @@ use Auth;
 use Validator;
 use App\News;
 use App\User;
+use App\Praise;
 
 class NewsController extends Controller
 {
@@ -56,7 +57,9 @@ class NewsController extends Controller
         $comments = $news->comments;
         // 赞列表
         $praises = $news->praises;
-        return view('news.show', compact('news', 'user', 'praises', 'comments'));
+        // 是否赞
+        $praiseFlag = Praise::where(['user_id'=>Auth::user()->id,'news_id'=>$id])->first();
+        return view('news.show', compact('news', 'user', 'praises', 'comments', 'praiseFlag'));
     }
 
     public function store(Request $request) {
@@ -69,6 +72,20 @@ class NewsController extends Controller
         ];
         News::create(array_merge($data, $request->all()));
         return redirect('/news');
+    }
+
+    public function praise(Request $request) {
+        $data = $request->all();
+        $id = $data['flag'];
+        unset($data['_token']);
+        unset($data['flag']);
+        if($id) {
+            $praise = Praise::where($data);
+            $praise->delete();
+        }else {
+            $id = Praise::create($data)->id;
+        }
+        return json_encode(array('flag'=>'ok', 'id' => $id));
     }
 
 }

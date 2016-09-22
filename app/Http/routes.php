@@ -34,9 +34,13 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     Route::resource('articles', 'ArticlesController');
     Route::resource('news', 'NewsController');
+    Route::post('news/praise', 'NewsController@praise');
 
     Route::resource('user', 'UserController');
     Route::post('user/avatar', 'UserController@avatar');
+
+    Route::get('friend/search', 'FriendController@search');
+    Route::resource('friend', 'FriendController');
 
     Route::auth();
 

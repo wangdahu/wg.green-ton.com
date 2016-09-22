@@ -4,10 +4,10 @@
         <a href="{{ url('news') }}"><h4>说说</h4></a>
     </li>
     <li class="{{ strpos(url()->current(), url('messages')) !== false ? 'active' : ''}}">
-        <a href="{{ url('messages') }}"><h4>消息</h4></a>
+        <a href="{{ url('message') }}"><h4>消息</h4></a>
     </li>
     <li class="{{ strpos(url()->current(), url('friends')) !== false ? 'active' : ''}}">
-        <a href="{{ url('friends') }}"><h4>好友列表</h4></a>
+        <a href="{{ url('friend') }}"><h4>好友列表</h4></a>
     </li>
     <li class="{{ strpos(url()->current(), url('user')) !== false ? 'active' : ''}}">
         <a href="{{ url('user/'.$user->id.'/edit') }}"><h4>设置</h4></a>
