@@ -7,6 +7,9 @@
             <div class="panel panel-default">
                 @include('user.avatar')
                 <div class="panel-body text-left ">
+
+                    <h4>他的说说</h4>
+                    <hr  style="margin-top: 5px;">
                     @include('user.title')
                     <div class="media">
                         <div class="pull-left">
@@ -16,12 +19,14 @@
                             <h3 class="media-heading"><a href="{{url('user/'.$user->id)}}" >{{$user->name}}</a></h3>
                             {{$news->content}}
                             <div class="media-heading">{{ substr($news->published_at, 5, 11)}}
+                                @if ($flag)
                                 <a class="btn" href="javascript:;"
                                  data-id="{{$news->id}}">
                                     <i class="fa fa-close"></i>
                                 </a>
+                                @endif
                                 <a class="btn praise-up" href="javascript:;" >
-                                    <i class="fa fa-thumbs-up" data-news_id="{{$news->id}}" data-user_id = "{{$user->id}}" data-flag = "{{$praiseFlag ? $praiseFlag->id : 0}}"> {{$praiseFlag ? '取消赞' : '赞'}}</i>
+                                    <i class="fa fa-thumbs-up" data-news_id="{{$news->id}}" data-user_id = "{{$authUser->id}}" data-flag = "{{$praiseFlag ? $praiseFlag->id : 0}}"> {{$praiseFlag ? '取消赞' : '赞'}}</i>
                                 </a>
                                 <a class="btn" href="javascript:;">
                                     <i class="fa fa-commenting-o"></i>
@@ -89,7 +94,7 @@
                         $('.praise-avatar').find('img[data-id='+data.id+']').remove();
                     }else {
                         praise.html(' 取消赞').data('flag', data.id);
-                        $('.praise-avatar').append('<img class="img-thumbnail" data-id='+data.id+' width="40" height="40" src="{{$user->avatar}}" />');
+                        $('.praise-avatar').append('<img class="img-thumbnail" data-id='+data.id+' width="40" height="40" src="{{$authUser->avatar}}" />');
                     }
                 }
             });

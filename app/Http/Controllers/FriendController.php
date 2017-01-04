@@ -12,26 +12,28 @@ use Auth;
 
 class FriendController extends Controller
 {
+    public $userId;
+    public function __construct() {
+        $this->userId = Auth::user()->id;
+    }
     //
     public function index(Request $request){
-        $user = User::findOrFail(Auth::user()->id);
-        $friends = Friend::where(['my_id' => Auth::user()->id])->get();
-        if($request->all()) {
-            var_dump($request->all());
-            $name = $request->all()['name'];
-            if($name) {
-                // 搜索用户列表
-            }
-
-        }
+        $user = User::findOrFail($this->userId);
+        $friends = Friend::where(['my_id' => $this->userId])->get();
         return view('friend.index',compact('friends','user'));
     }
 
     public function search(Request $request) {
-        var_dump($request->all());
-    }
+        $user = User::findOrFail($this->userId);
+        $friends = Friend::where(['my_id' => $this->userId])->get()->lists('friend_id')->toArray();
+        if($request->all()) {
+            $name = $request->all()['name'];
+            if($name) {
+                // 搜索用户列表
+                $lists = User::where('name', 'like','%'.$name.'%')->paginate(20);
+            }
 
-    public function show() {
-echo 111;
+        }
+        return view('friend.search',compact('lists','user','name','friends'));
     }
 }

@@ -10,6 +10,7 @@ use Validator;
 use App\News;
 use App\User;
 use App\Praise;
+use DB;
 
 class NewsController extends Controller
 {
@@ -39,27 +40,34 @@ class NewsController extends Controller
     public function index() {
         $user = User::findOrFail(Auth::user()->id);
         $news = News::latest()->where(['user_id' => Auth::user()->id])->get();
-        //dd(compact('news', 'user'));
         return view('news.index',compact('news','user'));
     }
 
     public function create() {
         $user = User::findOrFail(Auth::user()->id);
         $news = News::latest()->where(['user_id' => Auth::user()->id])->get();
-        //dd(compact('news', 'user'));
         return view('news.create',compact('news','user'));
     }
 
     public function show($id) {
-        $user = User::findOrFail(Auth::user()->id);
         $news = News::findOrFail($id);
+        $user_id = $news->user_id;
+        $user = User::findOrFail($user_id);
+        $authId = Auth::user()->id;
+        $flag = false;
+        if($user_id == $authId) {
+            $authUser = $user;
+            $flag = true;
+        }else {
+            $authUser = User::findOrFail($authId);
+        }
         // 回复列表
         $comments = $news->comments;
         // 赞列表
         $praises = $news->praises;
         // 是否赞
         $praiseFlag = Praise::where(['user_id'=>Auth::user()->id,'news_id'=>$id])->first();
-        return view('news.show', compact('news', 'user', 'praises', 'comments', 'praiseFlag'));
+        return view('news.show', compact('news', 'user', 'praises', 'comments', 'praiseFlag','authUser', 'flag'));
     }
 
     public function store(Request $request) {

@@ -14,6 +14,6 @@ class News extends Model
     }
 
     public function praises(){
-        return $this->hasMany('App\Praise');
+        return $this->hasMany('App\Praise')->orderBy('id','asc');
     }
 }

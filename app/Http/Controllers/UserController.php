@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use App\News;
 use Auth;
 use Validator;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -49,7 +50,8 @@ class UserController extends Controller
             return redirect('user');
         }
         $user = User::findOrFail($id);
-        return view('user.show', compact('user'));
+        $news = News::latest()->where(['user_id' => $id])->get();
+        return view('user.show', compact('user', 'news'));
     }
 
     public function edit($id) {

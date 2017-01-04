@@ -9,6 +9,7 @@
                 <div class="panel-body text-left">
                     <h4>他的说说</h4>
                     <hr  style="margin-top: 5px;">
+                    @include('news.list')
                 </div>
             </div>
         </div>
