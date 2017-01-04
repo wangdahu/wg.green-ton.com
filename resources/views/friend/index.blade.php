@@ -14,7 +14,7 @@
                     {!! Form::close() !!}
                         @include('errors.list')
                 </div>
-                    @include('friend.list')
+				@include('friend.list')
             </div>
         </div>
     </div>
