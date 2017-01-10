@@ -8,24 +8,27 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Friend;
+use Validator;
 use Auth;
+use Redirect;
 
-class FriendController extends Controller
-{
+class FriendController extends Controller {
     public $userId;
     public function __construct() {
-        $this->userId = Auth::user()->id;
+        $this->middleware('auth');
+        $this->userId = Auth::user() ? Auth::user()->id : '';
     }
+
     //
     public function index(Request $request){
-        $user = User::findOrFail($this->userId);
+        $user = Auth::user();
         $friends = Friend::where(['my_id' => $this->userId])->get();
         return view('friend.index',compact('friends','user'));
     }
 
     public function search(Request $request) {
-        $user = User::findOrFail($this->userId);
-        $friends = Friend::where(['my_id' => $this->userId])->get()->lists('friend_id')->toArray();
+        $user = Auth::user();
+        $friends = Friend::where(['my_id' => $this->userId,'status' => 1])->lists('friend_id')->toArray();
         if($request->all()) {
             $name = $request->all()['name'];
             if($name) {

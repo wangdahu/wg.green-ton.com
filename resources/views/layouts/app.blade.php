@@ -46,7 +46,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="" href="{{ url('/') }}">
+                <a href="{{ url('/articles') }}">
                     <img height="50" width="50" src="/images/logo.jpg">
                 </a>
             </div>
@@ -54,7 +54,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">主页</a></li>
+                    <li><a href="{{ url('/articles') }}">主页</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -79,7 +79,6 @@
             </div>
         </div>
     </nav>
-
     @yield('content')
 </body>
 </html>

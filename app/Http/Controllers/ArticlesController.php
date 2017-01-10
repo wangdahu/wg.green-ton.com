@@ -10,8 +10,13 @@ use App\Article;
 use App\User;
 use Carbon\Carbon;
 
-class ArticlesController extends Controller
-{
+class ArticlesController extends Controller {
+    public $userId;
+    public function __construct() {
+        $this->middleware('auth',['except' => ['index', 'show']]);
+        $this->userId = Auth::user() ? Auth::user()->id : '';
+    }
+
     public function index() {
         if(Auth::guest()) {
             $articles = Article::latest()->published()->get();
@@ -41,6 +46,7 @@ class ArticlesController extends Controller
     }
 
     public function store(Requests\CreateArticleRequest $request) {
+        dd(array_merge(['user_id' => Auth::user()->id], $request->all()));
         Article::create(array_merge(['user_id' => Auth::user()->id], $request->all()));
         return redirect('/articles');
     }

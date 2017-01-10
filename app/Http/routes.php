@@ -32,16 +32,20 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    Route::resource('articles', 'ArticlesController');
-    Route::resource('news', 'NewsController');
     Route::post('news/praise', 'NewsController@praise');
 
-    Route::resource('user', 'UserController');
     Route::post('user/avatar', 'UserController@avatar');
 
     Route::get('friend/search', 'FriendController@search');
-    Route::resource('friend', 'FriendController');
+    Route::post('friend/add', 'FriendController@add');
 
+    Route::post('message/send', 'MessageController@send');
+
+    Route::resource('articles', 'ArticlesController');
+    Route::resource('news', 'NewsController');
+    Route::resource('message', 'MessageController');
+    Route::resource('user', 'UserController');
+    Route::resource('friend', 'FriendController');
     Route::auth();
 
     Route::get('auth/github', 'Auth\AuthController@redirectToProvider');

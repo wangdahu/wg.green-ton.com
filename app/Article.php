@@ -22,4 +22,8 @@ class Article extends Model
     public function user() {
         return $this->belongsTo('App\User');
     }
+
+    public function author() {
+        return $this->hasOne('App\User', 'id', 'user_id');
+    }
 }

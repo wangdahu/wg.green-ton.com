@@ -32,7 +32,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home'; //刚才我们提到登录成功的重定向地址就是这个$redirectTo
+    protected $redirectTo = '/articles'; //刚才我们提到登录成功的重定向地址就是这个$redirectTo
     protected $guard = 'web';  //这个guard是特别的，是因为laravel5.2的关系
 
     /**

@@ -1,9 +1,8 @@
-
 <ul id="myTab" class="nav nav-tabs">
     <li class="{{ strpos(url()->current(), url('news')) !== false ? 'active' : ''}}">
         <a href="{{ url('news') }}"><h4>说说</h4></a>
     </li>
-    <li class="{{ strpos(url()->current(), url('messages')) !== false ? 'active' : ''}}">
+    <li class="{{ strpos(url()->current(), url('message')) !== false ? 'active' : ''}}">
         <a href="{{ url('message') }}"><h4>消息</h4></a>
     </li>
     <li class="{{ strpos(url()->current(), url('friend')) !== false ? 'active' : ''}}">
